@@ -1,0 +1,27 @@
+<form #flightAdd="ngForm" (ngSubmit)="submit(flightAdd.form);">
+    <div class="form-row">
+        <div class="col-md-5">
+            <label for="exampleInputEmail1">Origin</label>
+            <input type="text" autocomplete="off" class="form-control" name="origin" id="origin" aria-describedby="emailHelp" placeholder="Enter email" ngModel required>
+        </div>
+        <div class="col-md-5">
+            <label for="exampleInputEmail1">Destination</label>
+            <input type="text" autocomplete="off" class="form-control" name="destination" id="destination" aria-describedby="emailHelp" placeholder="Enter email" ngModel required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-5">
+            <label for="departureDateNgb">Departure Date</label>
+            <input class="form-control" readonly="readonly" (click)="d.toggle()" placeholder="yyyy-mm-dd" name="departureDateNgb" id="departureDateNgb" ngbDatepicker #d="ngbDatepicker" ngModel required>
+        </div>
+        <div class="col-md-5">
+            <label for="price">Price</label>
+            <input type="text" autocomplete="off" myNumberOnly class="form-control" name="price" id="price" placeholder="Price" priceFormat ngModel required>
+        </div>
+    </div>
+    <hr>
+    <div class="form-row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btnPayDetails" [disabled]="!flightAdd.valid">Add</button>
+        </div>
+    </div>

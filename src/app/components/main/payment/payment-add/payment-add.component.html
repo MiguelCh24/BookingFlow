@@ -1,0 +1,46 @@
+<form #paymentAdd="ngForm" (ngSubmit)="submit(paymentAdd.form);">
+    <div class="form-row">
+        <div class="col-md-12">
+            <label for="number">Credit Card Number</label>
+            <input type="text" autocomplete="off" class="form-control" id="number" name="number" aria-describedby="emailHelp" placeholder="Credit Card Number" ngModel required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-4">
+            <label for="month">MM</label>
+            <select class="form-control" id="month" name="month" ngModel required>
+                    <option value selected="selected">[-Choose-]</option>
+                    <option *ngFor="let month of listMonths" 
+                    [value]="month.id">
+                    {{ month.text }}
+            </option>  
+                </select>
+        </div>
+        <div class="col-md-4">
+            <label for="year">AAAA</label>
+            <select class="form-control" id="year" name="year" ngModel required>
+                <option value selected="selected">[-Choose-]</option>
+                    <option *ngFor="let year of listYears" 
+                    [value]="year.id">
+                    {{ year.text }}
+            </option>  
+                </select>
+        </div>
+        <div class="col-md-4">
+            <label for="cvc">CVC</label>
+            <input type="text" numberOnly autocomplete="off" class="form-control" id="cvc" name="cvc" aria-describedby="emailHelp" placeholder="CVC" required maxlength="3" ngModel required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-12">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" autocomplete="off" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Name" ngModel required>
+        </div>
+    </div>
+    <hr>
+    <div class="form-row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btnPayDetails" [disabled]="!paymentAdd.valid">Add</button>
+        </div>
+    </div>
+</form>

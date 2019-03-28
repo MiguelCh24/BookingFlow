@@ -1,0 +1,25 @@
+<form #passengerAdd="ngForm" (ngSubmit)="submit(passengerAdd.form);">
+    <div class="form-row">
+        <div class="col-md-5">
+            <label for="firstName">First Name</label>
+            <input type="email" autocomplete="off" class="form-control" name="firstName" id="firstName" placeholder="First Name" ngModel required>
+        </div>
+        <div class="col-md-5">
+            <label for="lastName">Last Name</label>
+            <input type="email" autocomplete="off" class="form-control" name="lastName" id="lastName" placeholder="Last Name" ngModel required>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-md-8">
+            <label for="departureDateNgb">Date of Birth</label>
+            <input class="form-control" readonly="readonly" [minDate]="minDate()" (click)="d.toggle()" placeholder="yyyy-mm-dd" name="dateBirthNgb" id="dateBirthNgb" ngbDatepicker #d="ngbDatepicker" ngModel required>
+
+        </div>
+    </div>
+    <hr>
+    <div class="form-row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btnPayDetails" [disabled]="!passengerAdd.valid">Add</button>
+        </div>
+    </div>
+</form>

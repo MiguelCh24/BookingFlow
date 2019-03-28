@@ -1,0 +1,47 @@
+<div class="container">
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h5>Create Flight</h5>
+
+            <div class="form-row ">
+                <div class="col-5 col-md-5">
+                    <app-flight-add></app-flight-add>
+                </div>
+                <div class="col-7 col-md-7">
+                    <app-flight-list></app-flight-list>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h5>Create Passenger</h5>
+            <div class="form-row">
+                <div class="col-5 col-md-5">
+                    <app-passenger-add></app-passenger-add>
+                </div>
+                <div class="col-7 col-md-7">
+                    <app-passenger-list></app-passenger-list>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <h5>Create Details Card</h5>
+            <div class="form-row">
+                <div class="col-5 col-md-5">
+                    <app-payment-add></app-payment-add>
+                </div>
+                <div class="col-7 col-md-7">
+                    <app-payment-list></app-payment-list>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <button class="btn btn-primary float-right" (click)="processForm()">Process</button>
+</div>

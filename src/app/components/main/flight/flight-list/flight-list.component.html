@@ -1,0 +1,20 @@
+<table class="table" *ngIf="flights.length>0">
+    <thead>
+        <tr>
+            <th scope="col">Origin</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Departure Date</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let flight of flights">
+            <th scope="row">{{flight.origin}}</th>
+            <td>{{flight.destination}}</td>
+            <td>{{flight.departureDate|date }}</td>
+            <td>{{flight.price|currency}}</td>
+            <td><button class="btn btn-danger" (click)="deleteFlight(flight)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
