@@ -11,7 +11,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let payment of payments">
-            <th scope="row">{{payment.number}}</th>
+            <th scope="row">{{payment.number|creditCardMask:3}}</th>
             <td>{{payment.month}}</td>
             <td>{{payment.year}}</td>
             <td>{{payment.cvc}}</td>

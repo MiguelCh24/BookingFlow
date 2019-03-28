@@ -31,6 +31,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { ListDetailComponent } from './components/list-detail/list-detail.component';
 
+import { CreditCardMaskPipe } from 'src/app/pipe/credit-card-mask.pipe';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ListDetailComponent } from './components/list-detail/list-detail.compon
     PassengerAddComponent,
     NumberOnlyDirective,
     PriceFormatDirective,
-    ListDetailComponent
+    ListDetailComponent,
+    CreditCardMaskPipe
   ],
   imports: [
     BrowserModule,

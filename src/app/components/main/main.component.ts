@@ -8,7 +8,7 @@ import { Payment } from "src/app/models/payment.model";
 import { Guid } from "guid-typescript";
 import Swal from "sweetalert2";
 import * as generalActions from "src/app/actions/id.actions";
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-main",
@@ -19,7 +19,6 @@ export class MainComponent implements OnInit {
   flights: Flight[] = [];
   passengers: Passenger[] = [];
   payments: Payment[] = [];
-
   constructor(
     private fireBaseService: FireBaseService,
     private store: Store<AppState>,
@@ -34,16 +33,32 @@ export class MainComponent implements OnInit {
     });
   }
   processForm() {
-    let id = Guid.create().toString();
-    this.fireBaseService.createRegister(
-      this.flights,
-      this.passengers,
-      this.payments,
-      id
-    );
-    const action = new generalActions.SetIdAction(id);
-    this.store.dispatch(action);
-    this.router.navigate(['/detail']);
-    //Swal("Creado", "", "success");
+    if (
+      this.flights.length == 0 ||
+      this.passengers.length == 0 ||
+      this.payments.length == 0
+    ) {
+      Swal.fire("Oops...", "You must enter values ​​in the forms!", "error");
+    } else {
+      console.log(this.flights.length);
+      let id = Guid.create().toString();
+      this.fireBaseService.createRegister(
+        this.flights,
+        this.passengers,
+        this.payments,
+        id
+      );
+      const action = new generalActions.SetIdAction(id);
+      this.store.dispatch(action);
+      Swal.fire({
+        title: "Complete!",
+        text: "Process Complete",
+        type: "success"
+      }).then(result => {
+        if (result.value) {
+          this.router.navigate(["/detail"]);
+        }
+      });
+    }
   }
 }

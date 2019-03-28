@@ -9,19 +9,6 @@ import { AppState } from "./reducers/app.reducers";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent implements OnInit {
-  // contador: number;
-  // constructor(private store: Store<AppState>) {
-  //   this.store.select("contador").subscribe(contador => {
-  //     this.contador = contador;
-  //   });
-  // }
-  // incrementar() {
-  //   const action = new IncrementarAction();
-  //   this.store.dispatch(action);
-  // }
-  // decrementar() {
-  //   const action = new DecrementarAction();
-  //   this.store.dispatch(action);
-  // }
+
   ngOnInit() {}
 }

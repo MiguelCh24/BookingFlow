@@ -10,9 +10,18 @@ import { AppState } from "src/app/reducers/app.reducers";
   styles: []
 })
 export class PassengerAddComponent implements OnInit {
+  maxDate;
+
   constructor(private store: Store<AppState>) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    let dateNow = new Date(); 
+    this.maxDate = {
+      year: dateNow.getFullYear(),
+      month: dateNow.getMonth() + 1,
+      day: dateNow.getDate()
+    };
+  }
   minDate() {
     return new Date();
   }

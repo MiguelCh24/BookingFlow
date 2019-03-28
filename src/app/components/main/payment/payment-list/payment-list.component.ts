@@ -3,7 +3,6 @@ import { Store } from "@ngrx/store";
 import { AppState } from "src/app/reducers/app.reducers";
 import { Payment } from "src/app/models/payment.model";
 import * as generalActions from "src/app/actions/payment.actions";
-
 @Component({
   selector: "app-payment-list",
   templateUrl: "./payment-list.component.html",
